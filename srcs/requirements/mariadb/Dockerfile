@@ -11,7 +11,7 @@ RUN chmod 777 /var/run/mysqld
 # RUN mkdir -p /run/mysql/ && touch /run/mysqld/mysqld.sock && chmod 777 /run/mysqld/mysqld.sock
 
 COPY conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
-COPY conf/launch_MySQL.sh /usr/local/bin/launch_MySQL.sh
+COPY tools/launch_MySQL.sh /usr/local/bin/launch_MySQL.sh
 RUN chmod 777 /usr/local/bin/launch_MySQL.sh
 
 EXPOSE 3306

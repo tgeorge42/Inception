@@ -23,12 +23,10 @@ RUN	cd /var/www/html && wget https://raw.githubusercontent.com/wp-cli/builds/gh-
 
 COPY	conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
-COPY 	conf/config_setup.sh /usr/local/bin/config_setup.sh
+COPY 	tools/config_setup.sh /usr/local/bin/config_setup.sh
 
 RUN     chmod +x /usr/local/bin/config_setup.sh
 
 EXPOSE	9000
 
 ENTRYPOINT [ "sh", "/usr/local/bin/config_setup.sh" ]
-
-# CMD ["./usr/local/bin/config_setup.sh"]
